@@ -1,0 +1,25 @@
+class image_dehazer():: Defines a Python class named image_dehazer.
+
+def __init__(self, airlightEstimation_windowSze=15, boundaryConstraint_windowSze=3, C0=20, C1=300, regularize_lambda=0.1, sigma=0.5, delta=0.85, showHazeTransmissionMap=True):: Defines an initialization method for the image_dehazer class. It initializes various parameters required for image dehazing.
+
+airlightEstimation_windowSze: Size of the window for estimating the airlight (default value: 15).
+boundaryConstraint_windowSze: Size of the window for boundary constraints (default value: 3).
+C0: Constant C0 used in the algorithm (default value: 20).
+C1: Constant C1 used in the algorithm (default value: 300).
+regularize_lambda: Regularization parameter lambda (default value: 0.1).
+sigma: Sigma value (default value: 0.5).
+delta: Delta value (default value: 0.85).
+showHazeTransmissionMap: Boolean indicating whether to show the haze transmission map (default value: True).
+_A, _transmission, _WFun: Empty lists used for internal computation.
+def __AirlightEstimation(self, HazeImg):: Defines a method named __AirlightEstimation within the class. This method estimates the airlight in the hazy image.
+
+HazeImg: Input hazy image passed to the method for processing.
+The method performs operations to estimate the airlight based on the provided hazy image. It checks if the input image is in grayscale or color and applies erosion operations to estimate the airlight intensity.
+
+If the input image is color (3 channels), it performs erosion for each channel separately.
+If the input image is grayscale (single channel), it performs erosion directly.
+The erosion is performed using a square kernel of size airlightEstimation_windowSze. The maximum pixel value after erosion is calculated and appended to the _A list.
+
+The method appends the calculated airlight intensity values to the _A list.
+
+This breakdown explains the class structure, initialization method, and the method responsible for estimating the airlight in the hazy image.
