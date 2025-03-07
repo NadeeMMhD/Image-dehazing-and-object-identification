@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Dehazing</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .header {
+            background-image: url("{{ url_for('static', filename='Image/home.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            min-height: 450px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .section-content {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .btn-dehaze {
+            background-color: #ff9800;
+            color: white;
+            padding: 14px 28px;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn-dehaze:hover {
+            background-color: #e68900;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="header" id="home">
+    <div class="w3-display-middle">
+        <span class="w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DehazeVision</span>
+    </div>
+</div>
+
+<!-- Information Section -->
+<div class="section" id="dehazing-info">
+    <div class="section-content">
+        <h2>Enhance Your Images with Dehazing</h2>
+        <p>Image dehazing is a powerful technique that improves visibility and clarity in images affected by haze or fog. By removing atmospheric interference, dehazing enhances contrast and brings out the finer details of your images.</p>
+        <p>Experience the magic of image dehazing with our advanced AI-driven solution.</p>
+        <a href="/upload" class="btn-dehaze">Dehaze Now</a>
+    </div>
+</div>
+
+</body>
+</html>

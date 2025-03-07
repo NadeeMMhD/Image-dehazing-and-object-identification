@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dehazing and Object Detection Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff; /* Pure White Background */
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            border: 1px solid #ddd; /* Light border for better structure */
+        }
+        h1 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd; /* Light border for a polished look */
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+            border: none;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dehazed & Detected Image</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='outputImages/processed_detection.jpg') }}" alt="Processed Image">
+        </div>
+        <a href="/" class="btn-custom">🏠 Home</a>
+        <a href="/upload" class="btn-custom">📤 Upload Another Image</a>
+    </div>
+</body>
+</html>
